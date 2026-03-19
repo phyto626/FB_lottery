@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FB Comment Scraper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FB Scraper</h1>
+      <span class="badge" id="statusBadge">Idle</span>
+    </header>
+
+    <div id="warningPanel" class="panel warning hidden">
+      Please navigate to a Facebook post page to start scraping.
+    </div>
+
+    <div id="mainPanel" class="panel">
+      <div class="url-input-section">
+        <input type="text" id="urlInput" placeholder="Paste Facebook post URL here...">
+        <button id="goBtn" class="btn primary">Go & Scrape</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <span class="stat-value" id="commentCount">0</span>
+          <span class="stat-label">Comments Found</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn primary">Start Scraping</button>
+        <button id="stopBtn" class="btn danger" disabled>Stop</button>
+      </div>
+      
+      <div class="preview-section">
+        <h3>Preview (Latest 3)</h3>
+        <ul id="previewList" class="preview-list">
+          <li class="empty-state">No comments yet</li>
+        </ul>
+      </div>
+
+      <div class="export-controls">
+        <button id="exportCsvBtn" class="btn secondary" disabled>CSV</button>
+        <button id="exportJsonBtn" class="btn secondary" disabled>JSON</button>
+        <button id="copyBtn" class="btn secondary" disabled>Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
